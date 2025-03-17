@@ -1,0 +1,195 @@
+
+.Body {
+  background-image: url('./back32.jpeg');
+  display: flex; /* включаємо flexbox */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+  flex-direction: column;
+}
+
+.Wrap{
+  width: 420px;
+  height: 350px;
+  background-color: rgb(22, 65, 114, 0.2);
+  backdrop-filter: blur(15px);
+  color: aliceblue;
+  margin-bottom: 20px;
+  border: 2px solid #166ac4;
+  border-radius: 10px;
+  padding: 20px 30px;
+  box-shadow: 0 0 10px  rgba(0, 0, 0, 0.2);
+  
+}
+
+
+.box{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+  
+}
+
+.input{
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid #166ac4;
+  border-radius: 40px;
+  font-size: 16px;
+  color:  #ffffff;
+  padding-left: 15px;
+  box-sizing: border-box;
+  padding-right: 40px;
+}
+
+.input::placeholder {
+  color: #ffffff;
+}
+
+
+
+
+.h1{
+font-size: 36px;
+text-align: center;
+
+}
+.userpng{
+  height: 20px;
+  font-size: 20px;
+  position: absolute;
+  top: 30%;
+  right: 15px;
+
+}
+
+.lockpng{
+  height: 20px;
+  font-size: 20px;
+  position: absolute;
+  top: 30%;
+  right: 15px;
+}
+
+.remember{
+  display: flex;
+  justify-content: space-between;
+  font-size: 17px;
+  margin: -15px 0 15px;
+}
+
+.label{
+  color: #ffffff;
+  margin-right: 10px;
+}
+
+.a{
+  color: #ffffff;
+  margin-right: 10px;
+  text-decoration: none;
+  font-weight: 700;
+}
+.a:hover{
+  text-decoration: underline;
+}
+
+.button{
+   width: 100%;
+   height: 45px;
+   border: none;
+   outline: none;
+   background-color: #166ac4;
+   border-radius: 40px;
+   box-shadow: 0 0 10px rgb(255, 255, 255, .1);
+   cursor: pointer;
+   font-size: 16px;
+   color: #ffffff;
+   font-weight: 600;
+   appearance: none;
+ }
+
+.registr{
+  border: 2px solid #166ac4;
+  background-color: rgb(22, 65, 114, 0.2);
+  backdrop-filter: blur(15px);
+  color: aliceblue;
+  margin-bottom: 300px;
+  width: 420px;
+  font-size: 17px;
+  border-radius: 10px;
+  padding: 0px 30px;
+  display: flex;
+  align-items: center;
+  
+}
+
+.rega{
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  margin-left: 120px;
+  cursor: pointer;
+}
+.rega:hover{
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* modal.module.scss */
+.modal2 {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* затемнення фону */
+  display: flex;
+  justify-content: center; /* по горизонталі */
+  align-items: center; /* по вертикалі */
+
+}
+
+.close2 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #333;
+}
+
+
+
+.modalContent2{
+  width: 420px;
+  height: 400px;
+  background-color: rgba(39, 102, 175, 0.2);
+  backdrop-filter: blur(15px);
+  color: aliceblue;
+  margin-bottom: 330px;
+  border: 2px solid #166ac4;
+  border-radius: 10px;
+  padding: 20px 30px;
+  box-shadow: 0 0 10px  rgba(0, 0, 0, 0.2);
+  
+}
+
+
+

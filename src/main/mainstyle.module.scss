@@ -1,0 +1,25 @@
+.body{
+    background-image: url('../Login/back32.jpeg');
+    background-attachment: fixed; /* Фіксує фон */
+    background-size: cover; /* Покриває весь екран */
+    min-height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    flex-wrap: wrap;
+    flex-direction: column;
+    overflow: auto;
+    
+    
+}
+
+.mainlayers{
+    position: relative;
+    width: 1000px;
+   flex-wrap: wrap;
+   flex-direction: column;
+   background-color: rgba(68, 68, 68, 0.192);
+   min-height: 100vh; 
+   
+}

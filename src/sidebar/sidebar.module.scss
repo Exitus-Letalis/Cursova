@@ -1,0 +1,76 @@
+.body{
+    min-height: 100vh; 
+    width: 250px;
+    color: rgb(255, 255, 255);
+    //border: 1px solid blue; 
+    position: fixed; /* Фіксація бокового меню */
+    //margin-top: 30px;
+  background-color: transparent
+}
+.mainlink{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.links{
+    display: flex;
+    flex-direction: column; /* Розташування елементів у стовпець */
+    gap: 35px;
+    width: 40px;
+    margin-top: 150px;
+    margin-left: 30px;
+    margin-bottom: 140px;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap');
+.name{
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    cursor: pointer;
+    margin-left: 25px;
+    margin-top: 20px;
+    width: 135px;
+    font-family: 'Merienda' ;
+}
+
+.text{
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    font-size: 20px;
+    
+}
+.button{
+   border: none; 
+   outline: none;
+   cursor: pointer;
+   background: none;
+}
+
+
+
+.link{
+    text-decoration: none;
+color: rgb(255, 255, 255);
+display: flex;
+gap: 5px;
+align-items: center;
+}
+.activeLink {
+    text-decoration: underline; /* додаємо підкреслення, коли лінк активний */
+    text-underline-offset: 10px;
+  }
+.avatar{
+    background-color: rgb(82, 82, 82);//Сюди буде завантажуватись аватар після встановлення
+    border-radius: 100%;
+    width: 70px;
+    height: 70px;
+    margin-left: 25px;
+    cursor: pointer;
+    background-image: url('../Login/Rectangle 15.png');
+    background-size: cover; /* Масштабування зображення, щоб воно покривало весь блок */
+    background-position: center; /* Відображення центру зображення */
+    
+}

@@ -1,0 +1,85 @@
+.body{
+    background-image: url('../Login/back32.jpeg');
+    background-attachment: fixed; /* Фіксує фон */
+    background-size: cover; /* Покриває весь екран */
+    min-height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    flex-wrap: wrap;
+    flex-direction: column;
+   
+}
+
+ 
+.mainlayers{
+    position: relative;
+    width: 1000px;
+   flex-wrap: wrap;
+   flex-direction: column;
+  // overflow: hidden;
+  //overflow-y: hidden;
+   
+}
+
+.upimage{
+    background-color: rgb(139, 139, 139);
+    width: 1000px;
+    height:30vh;
+    flex-direction: column;
+    position: relative;
+    background-image: url('../Login/back32.jpeg');
+    background-size: cover; /* Масштабування зображення, щоб воно покривало весь блок */
+    background-position: center; /* Відображення центру зображення */
+    background-repeat: no-repeat; /* Заборона повторення фонового зображення */
+ 
+}
+
+.prof{
+    background-color: rgba(68, 68, 68, 0.192);
+    min-height: 70vh; 
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;  
+    position: relative;
+  
+}
+
+.avatar{
+    background-image: url('../Login/Rectangle 15.png');
+    width: 203px;
+    height: 203px;
+    border-radius: 100%;
+    position: absolute;
+    left: 5%;
+    top: 20vh;
+    z-index: 10;
+
+  
+}
+
+.redagbutton{
+    position: absolute;
+    left: 55%;
+    top: 32vh;
+    z-index: 10;
+    display: flex; /* Робимо контейнер флексом */
+    justify-content:center; /* Розподіляємо кнопки по краях */
+    gap: 40px;
+    align-items: center; /* Вирівнюємо по вертикалі */
+
+   
+}
+
+.buttonredagpros,
+.buttonlook {
+   border: 2px solid  rgb(255, 255, 255);
+   width: 160px;
+    padding: 10px 10px;
+    border-radius: 40px;
+    cursor: pointer;
+    text-align: center;
+    color: rgb(255, 255, 255);
+   
+}

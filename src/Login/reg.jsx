@@ -1,6 +1,7 @@
-import React from 'react';
+/*import React from 'react';
 import styles from './reg2.module.scss';
-
+import lock from '../lock.png';
+import user from '../user.png';
  
 
 
@@ -34,4 +35,4 @@ const Reg = () => {
   };
   
   export default Reg;
-  
+  */
