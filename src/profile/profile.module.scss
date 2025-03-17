@@ -2,7 +2,6 @@
     background-image: url('../Login/back32.jpeg');
     background-attachment: fixed; /* Фіксує фон */
     background-size: cover; /* Покриває весь екран */
-    min-height: 100vh; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,8 +17,7 @@
     width: 1000px;
    flex-wrap: wrap;
    flex-direction: column;
-  // overflow: hidden;
-  //overflow-y: hidden;
+  
    
 }
 
@@ -46,16 +44,32 @@
   
 }
 
+.maininfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 27vh;
+    left: 17vh;
+
+}
+.information{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    gap: 10px;
+    margin-top: 30vh;
+    
+}
 .avatar{
     background-image: url('../Login/Rectangle 15.png');
     width: 203px;
     height: 203px;
     border-radius: 100%;
     position: absolute;
-    left: 5%;
-    top: 20vh;
-    z-index: 10;
-
+    z-index: 11;
   
 }
 
@@ -68,9 +82,21 @@
     justify-content:center; /* Розподіляємо кнопки по краях */
     gap: 40px;
     align-items: center; /* Вирівнюємо по вертикалі */
-
    
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Kameron:wght@600&display=swap');
+
+.name, .infor{
+    font-family: 'Kameron', serif;
+    color: rgb(255, 255, 255);
+    z-index: 10;
+    width: max-content;
+    text-align: center;
+    font-size: 20px;
+}
+
+
 
 .buttonredagpros,
 .buttonlook {
