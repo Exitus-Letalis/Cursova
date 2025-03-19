@@ -1,8 +1,11 @@
 .body {
-    background-color: var(--bg-color, #ffffff); // Використовуємо змінну для кольору
-    height: 100vh;
-    padding: 20px;
-  }
+  background: var(--bg-image), var(--bg-color, #ffffff);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  padding: 20px;
+}
+
   
   .title {
     font-size: 24px;

@@ -6,12 +6,20 @@ export default function Tem() {
     return localStorage.getItem("bgColor") || "#ffffff";
   });
 
+  const bgImages = {
+    "#ffffff": "url('/images/light-bg.jpg')",
+    "#4285f4": "url('../Login/back32.jpeg')",
+    "#9e47ff": "url('/images/purple-bg.jpg')",
+    "#000000": "url('/images/dark-bg.jpg')",
+  };
+
   useEffect(() => {
     localStorage.setItem("bgColor", bgColor);
-    document.documentElement.style.setProperty("--bg-color", bgColor); // Оновлюємо змінну для SCSS
+    document.documentElement.style.setProperty("--bg-color", bgColor);
+    document.documentElement.style.setProperty("--bg-image", bgImages[bgColor] || "none");
   }, [bgColor]);
 
-  const colors = ["#ffffff",  "#4285f4", "#9e47ff", "#000000"];
+  const colors = ["#ffffff", "#4285f4", "#9e47ff", "#000000"];
 
   const handleColorChange = (color) => {
     setBgColor(color);
