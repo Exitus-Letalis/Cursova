@@ -8,6 +8,7 @@
     min-height: 100vh; 
     flex-wrap: wrap;
     flex-direction: column;
+    z-index: 1;
    
 }
 
@@ -17,7 +18,7 @@
     width: 1000px;
    flex-wrap: wrap;
    flex-direction: column;
-  
+   flex-grow: 1;
    
 }
 
@@ -36,12 +37,15 @@
 
 .prof{
     background-color: rgba(68, 68, 68, 0.192);
-    min-height: 70vh; 
+    min-height: 500px;
+    
     flex-direction: column;
     padding: 20px;
     gap: 10px;  
     position: relative;
   
+
+    overflow: hidden; /* Фото не будуть виходити за межі */
 }
 
 .maininfo{
@@ -69,18 +73,18 @@
     height: 203px;
     border-radius: 100%;
     position: absolute;
-    z-index: 11;
+    z-index: 2;
   
 }
 
 .redagbutton{
     position: absolute;
-    left: 55%;
+    right: 20px;
     top: 32vh;
-    z-index: 10;
+    z-index: 2;
     display: flex; /* Робимо контейнер флексом */
     justify-content:center; /* Розподіляємо кнопки по краях */
-    gap: 40px;
+    gap: 20px;
     align-items: center; /* Вирівнюємо по вертикалі */
    
 }
@@ -90,7 +94,7 @@
 .name, .infor{
     font-family: 'Kameron', serif;
     color: rgb(255, 255, 255);
-    z-index: 10;
+    z-index: 2;
     width: max-content;
     text-align: center;
     font-size: 20px;
@@ -111,6 +115,122 @@
 }
 
 .public{
-    background-color: aquamarine;
-    margin-top: 200px;
+    //background-color: aquamarine;
+    margin-top: 170px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
 }
+
+.likeinform {
+    color: rgb(255, 255, 255);
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    width: max-content;
+    max-width: 60%; /* Запобігає виходу за межі */
+    align-items: center;
+    text-align: center;
+    justify-content: flex-end; /* Притискає текст до правого краю */
+    right: 30px;
+    top: 42vh;
+    font-size: 22px;
+    gap: 10px;
+    font-family: 'Kameron', serif;
+}
+
+.savepublbut{
+    color: aliceblue;
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    width: 97vh;
+    max-width: 100%;
+    gap: 100px;
+    font-size: 25px;
+    font-family: 'Kameron', serif;
+    border-bottom: 2px solid white;
+}
+
+
+
+.foto {
+    padding-top: 50px;
+    
+    width: 100%; /* Робимо ширину 100% від .prof */
+    max-width: 100%; /* Фото не виходять за межі */
+    justify-content: center; /* Центруємо фото */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+   
+    min-height: 300px;
+    //max-height: 70vh;
+    //background-color: transparent; /* Забираємо білий фон */
+  //  position: relative; /* Задаємо позицію контейнера для коректного розташування */
+   
+ 
+  }
+
+  .foto p {
+    grid-column: span 4;
+    text-align: center;
+    font-size: 30px;
+    color: #ffffff;
+    margin-top: 20px;
+  }
+  
+  .image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+  transition: transform 0.3s;
+    margin-top: 5px;
+    cursor: pointer;
+    
+  }
+  
+  .image:hover {
+    transform: scale(1.05);
+  }
+  
+
+
+
+  ::-webkit-scrollbar {
+    width: 6px; /* Товщина скролбара */
+}
+
+/* Стилізуємо доріжку (фон скролбара) */
+::-webkit-scrollbar-track {
+    background: #1C5D95; /* Колір фону */
+}
+
+/* Стилізуємо повзунок (сам скрол) */
+::-webkit-scrollbar-thumb {
+    background: #3CB1F4; /* Колір повзунка */
+    border-radius: 4px;
+}
+
+/* Зміна кольору повзунка при наведенні */
+::-webkit-scrollbar-thumb:hover {
+    background: #37a3e2;
+}
+
+
+.publication, .saves {
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    transition: 0.3s;
+  }
+  
+  .activeTab {
+    border-bottom: 2px solid #ffffff; /* Підкреслення активної вкладки */
+    font-weight: bold;
+  }
+  

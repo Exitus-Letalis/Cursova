@@ -19,4 +19,22 @@
   flex-direction: column;
   background-color: rgba(68, 68, 68, 0.192);
   min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 100vh; /* Щоб зайняти всю висоту екрану */
+}
+
+
+.storis{
+  background-color: aqua;
+  text-align: left;
+}
+.post{
+  background-color: azure;
+  height: 50vh;
+ // margin-top: 150px;
+  width: 80vh;
+ // margin-left: 10%;
+  text-align: center;
 }
