@@ -1,5 +1,6 @@
 import React from "react";
 import styles from './mainstyle.module.scss';
+import globalstyles from "../style/allstyle.module.scss";
 import Tem from "../style/stylecolor";
 
 const Main= () =>{
@@ -7,6 +8,8 @@ const Main= () =>{
 
 
 return(
+    <>
+     <div className={globalstyles.back}></div> {/* Фон буде окремим елементом */}
     <div className={styles.body}>
         
         <div className={styles.mainlayers}>
@@ -18,7 +21,7 @@ return(
         </div>
         
     </div>
-
+</>
 )
 
 

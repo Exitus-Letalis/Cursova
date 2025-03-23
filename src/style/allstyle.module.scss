@@ -1,0 +1,40 @@
+.back {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Поміщає фон позаду всього контенту */
+}
+
+.back::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 120%;
+    height: 120%;
+    background: url('../Login/back32.jpeg') ;
+    filter: blur(1px); /* Розмиття */
+}
+
+::-webkit-scrollbar {
+    width: 6px; /* Товщина скролбара */
+  }
+  
+  /* Стилізуємо доріжку (фон скролбара) */
+  ::-webkit-scrollbar-track {
+    background: #1C5D95; /* Колір фону */
+  }
+  
+  /* Стилізуємо повзунок (сам скрол) */
+  ::-webkit-scrollbar-thumb {
+    background: #3CB1F4; /* Колір повзунка */
+    border-radius: 4px;
+  }
+  
+  /* Зміна кольору повзунка при наведенні */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #37a3e2;
+  }

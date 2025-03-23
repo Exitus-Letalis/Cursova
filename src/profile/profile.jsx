@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./profile.module.scss";
+import globalstyles from "../style/allstyle.module.scss";
 import axios from "axios";
 
 
@@ -45,7 +46,9 @@ const handleTabChange = (tab) => {
   setActiveTab(tab);
 };
 
-  return (
+return (
+  <>
+    <div className={globalstyles.back}></div> {/* Фон буде окремим елементом */}
     <div className={styles.body}>
       <div className={styles.mainlayers}>
         <div className={styles.upimage}></div>
@@ -64,21 +67,21 @@ const handleTabChange = (tab) => {
           <div>100 Публікацій</div>
           <div>100 Підписників</div>
           <div>100 Підписок</div>
-          </div>
+        </div>
         <div className={styles.prof}>
           <div className={styles.public}>
             <div className={styles.savepublbut}>
-              <div  className={`${styles.publication} ${activeTab === "publications" ? styles.activeTab : ""}`}
+              <div className={`${styles.publication} ${activeTab === "publications" ? styles.activeTab : ""}`}
                 onClick={() => handleTabChange("publications")}>
                 Публікації
-                </div>
+              </div>
               <div className={`${styles.saves} ${activeTab === "saves" ? styles.activeTab : ""}`}
                 onClick={() => handleTabChange("saves")}>
-                  Збережене
-                  </div>
+                Збережене
+              </div>
             </div>
             <div className={styles.foto}>
-            {activeTab === "publications" ? (
+              {activeTab === "publications" ? (
                 photos.length > 0 ? (
                   photos.map((photo, index) => (
                     <img key={index} src={photo} alt="Фото" className={styles.image} />
@@ -100,7 +103,9 @@ const handleTabChange = (tab) => {
         </div>
       </div>
     </div>
-  );
+  </>
+);
+
 };
 
 export default Profile;

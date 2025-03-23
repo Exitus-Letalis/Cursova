@@ -5,11 +5,14 @@
     //border: 1px solid blue; 
     position: fixed; /* Фіксація бокового меню */
     //margin-top: 30px;
-  background-color: transparent
+  background-color: transparent;
+  z-index: 1;
+  
 }
 .mainlink{
     text-decoration: none;
     color: rgb(255, 255, 255);
+    z-index: 1;
 }
 
 .links{
@@ -20,6 +23,7 @@
     margin-top: 150px;
     margin-left: 30px;
     margin-bottom: 140px;
+    z-index: 1;
 }
 
 
@@ -33,6 +37,7 @@
     margin-top: 20px;
     width: 135px;
     font-family: 'Merienda' ;
+    z-index: 1;
 }
 
 .text{
@@ -40,13 +45,14 @@
     align-items: center;
     white-space: nowrap;
     font-size: 20px;
-    
+    z-index: 1;
 }
 .button{
    border: none; 
    outline: none;
    cursor: pointer;
    background: none;
+   z-index: 1;
 }
 
 
@@ -72,5 +78,6 @@ align-items: center;
     background-image: url('../Login/Rectangle 15.png');
     background-size: cover; /* Масштабування зображення, щоб воно покривало весь блок */
     background-position: center; /* Відображення центру зображення */
+    z-index: 1;
     
 }
