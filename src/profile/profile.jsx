@@ -14,7 +14,7 @@ const Profile = () => {
 
   useEffect(() => {
     // Генеруємо 12 рандомних фото
-    const randomPhotos = Array.from({ length: 40 }, () => "https://picsum.photos/300");
+    const randomPhotos = Array.from({ length: 25 }, () => "https://picsum.photos/1920/1080");
     setPhotos(randomPhotos);
   }, []);
 
@@ -87,7 +87,7 @@ return (
                     <img key={index} src={photo} alt="Фото" className={styles.image} />
                   ))
                 ) : (
-                  <p>Завантаження фото...</p>
+                  <p>Додайте фото</p>
                 )
               ) : (
                 savedPhotos.length > 0 ? (

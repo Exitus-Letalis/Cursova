@@ -104,7 +104,7 @@ const Sidebar = () => {
           <span className={styles.text}>Пошук</span>
         </NavLink>
         <NavLink
-          to="/prof1"
+          to="/message"
           className={({ isActive }) =>
             isActive ? `${styles.link} ${styles.activeLink}` : styles.link
           }
@@ -126,7 +126,7 @@ const Sidebar = () => {
           <span className={styles.text}>Повідомлення</span>
         </NavLink>
         <NavLink
-          to="/prof1"
+          to="/friends"
           className={({ isActive }) =>
             isActive ? `${styles.link} ${styles.activeLink}` : styles.link
           }
@@ -186,7 +186,7 @@ const Sidebar = () => {
           <span className={styles.text}>Друзі</span>
         </NavLink>
         <NavLink
-          to="/prof1"
+          to="/settings"
           className={({ isActive }) =>
             isActive ? `${styles.link} ${styles.activeLink}` : styles.link
           }
@@ -210,7 +210,7 @@ const Sidebar = () => {
           <span className={styles.text}>Налаштування</span>
         </NavLink>
         <NavLink
-          to="/prof1"
+          to="/createstoris"
           className={({ isActive }) =>
             isActive ? `${styles.link} ${styles.activeLink}` : styles.link
           }
