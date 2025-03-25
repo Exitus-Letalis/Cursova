@@ -37,7 +37,6 @@ const Profile = () => {
 
   
 
-
   {photos.map((photo, index) => (
                 <img key={index} src={photo.image_url} alt="Фото" className={styles.image} />
               ))}
