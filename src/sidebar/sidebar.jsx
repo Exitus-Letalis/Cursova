@@ -1,14 +1,47 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styles from "./sidebar.module.scss";
 import { Link } from "react-router-dom"; // Імпортуємо Link
 import { useLocation } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import{useNavigate} from "react-router-dom";
 
 const Sidebar = () => {
   const location = useLocation();
 
   // Перевіряємо, чи поточний маршрут один з потрібних
   const isSidebarVisible = location.pathname !== "/";
+  const [rSidebar, setRSidebarOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+  
+    const nav=useNavigate();
+    const exit =()=>{
+      localStorage.removeItem("token");
+      nav("/");
+    }
+
+ 
+//Функція для відкриття бокогового пошуку
+const rightSisebar=()=>{
+  setRSidebarOpen(!rSidebar);
+};
+
+  // Закриває dropdown при кліку поза ним
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target)
+      ) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   if (!isSidebarVisible) return null;
   return (
@@ -71,11 +104,9 @@ const Sidebar = () => {
           </button>
           <span className={styles.text}>Профіль</span>
         </NavLink>
-        <NavLink
-          to="/prof1"
-          className={({ isActive }) =>
-            isActive ? `${styles.link} ${styles.activeLink}` : styles.link
-          }
+        <div
+          className={styles.link}
+          onClick={rightSisebar} // відкриття або закриття пошуку
         >
           <button className={styles.button} type="submit">
             <svg
@@ -101,8 +132,15 @@ const Sidebar = () => {
               />
             </svg>
           </button>
-          <span className={styles.text}>Пошук</span>
-        </NavLink>
+          <span className={styles.text} onClick={rightSisebar}>Пошук</span>
+        </div>
+        {/*Пошук */}
+        {rSidebar &&(
+          <div className={styles.rsidebar}>
+            <input className={styles.rinput} placeholder="Пошук" type="text"/>
+            <div className={styles.usersearch}> тут буде список користувачів які автоматично утворють список по мірі написання в пошуку</div>
+          </div>
+        )}
         <NavLink
           to="/message"
           className={({ isActive }) =>
@@ -236,7 +274,16 @@ const Sidebar = () => {
           <span className={styles.text}>Створити допис</span>
         </NavLink>
       </div>
-      <div className={styles.avatar}></div>
+      <div className={styles.avatarWrapper} ref={dropdownRef}>
+      <div className={styles.avatar}onClick={() => setIsDropdownOpen(!isDropdownOpen)}></div>
+      {isDropdownOpen && (
+          <div className={styles.dropdown}>
+            <ul>
+              <li onClick={exit}>Вийти</li>
+            </ul>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

@@ -7,7 +7,6 @@ import Tem from "../style/stylecolor";
 const Main= () =>{
 
 
-
 return(
     <>
      <div className={globalstyles.back}></div> {/* Фон буде окремим елементом */}
@@ -15,7 +14,16 @@ return(
         <div className={styles.mainlayers}>
             <Stories/>
             <div className={styles.post}>Місце для посту(включно коментарі,аватарки...)
-
+            <div>Аватарка та нік нейм</div>
+            <div>
+                місце для фото
+            </div>
+            <div>
+                Лайк
+                Відправити
+                Коментарі
+                Зберегти
+            </div>
             </div>
         </div>
         

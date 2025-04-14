@@ -46,6 +46,7 @@
     white-space: nowrap;
     font-size: 20px;
     z-index: 1;
+    cursor: pointer;
 }
 .button{
    border: none; 
@@ -81,3 +82,67 @@ align-items: center;
     z-index: 1;
     
 }
+
+.avatarWrapper {
+    position: relative;
+    display: inline-block;
+  }
+  
+
+  .dropdown {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    padding: 10px 0;
+    z-index: 10;
+  
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+  
+      li {
+        padding: 10px 20px;
+        color: white;
+        cursor: pointer;
+        transition: background 0.2s;
+  
+        &:hover {
+          background-color: #333;
+        }
+      }
+    }
+  }
+
+  .rsidebar{
+    position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  background-color: rgba(68, 68, 68, 0.192);
+  color: white;
+  padding: 20px;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+  }
+  .rinput{
+  
+  border: none;
+  outline: none;
+  border: 2px solid #166ac4;
+  border-radius: 40px;
+  font-size: 16px;
+  color:  #000000;
+  padding-left: 15px;
+ // box-sizing: border-box;
+  padding-right: 40px;
+  }
+  .usersearch{
+    margin-top: 20px;
+    background-color: #166ac4;
+    height: 100%;
+  }
