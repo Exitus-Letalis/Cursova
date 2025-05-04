@@ -4,7 +4,8 @@ import { Link } from "react-router-dom"; // Імпортуємо Link
 import { useLocation } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import{useNavigate} from "react-router-dom";
-
+import axios from "axios";
+import { jwtDecode } from "jwt-decode";
 const Sidebar = () => {
   const location = useLocation();
 
@@ -13,12 +14,76 @@ const Sidebar = () => {
   const [rSidebar, setRSidebarOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const [searchTerm, setSearchTerm] = useState("");
+const [searchResults, setSearchResults] = useState([]);
+const [avatarUrl, setAvatarUrl] = useState(null);
+
+useEffect(() => {
+  const token = localStorage.getItem("token");
+
+  if (!token) {
+    console.error("Token not found");
+    return;
+  }
+
+  let decodedToken;
+  try {
+    decodedToken = jwtDecode(token);
+  } catch (error) {
+    console.error("Invalid token", error);
+    return;
+  }
+
+  const nickName = decodedToken?.NickName;
+  if (!nickName) {
+    console.error("NickName not found in token");
+    return;
+  }
+
+  const fetchAvatar = async () => {
+    try {
+      const response = await axios.get(`http://localhost:8010/api/users/${nickName}`);
+      console.log(response.data); // Перевірте відповідь на наявність поля imageUrl
+      if (response.data?.imageUrl) {
+        setAvatarUrl(response.data.imageUrl); // Оновлення аватарки
+      } else {
+        console.error("Avatar image URL not found in response");
+      }
+    } catch (error) {
+      console.error("Помилка при завантаженні аватарки:", error);
+    }
+  };
+
+  fetchAvatar();
+}, []);
+const handleSearchChange = async (e) => {
+  const value = e.target.value;
+  setSearchTerm(value);
+
+  if (value.trim() === "") {
+    setSearchResults([]);
+    return;
+  }
+
+  try {
+    const response = await fetch(`http://localhost:8010/api/users/find=${searchTerm}`);
+    if (response.ok) {
+      const results = await response.json();
+      setSearchResults(results);
+    }
+  } catch (error) {
+    console.error("Search error:", error);
+  }
+};
   
     const nav=useNavigate();
     const exit =()=>{
       localStorage.removeItem("token");
       nav("/");
     }
+
+
+
 
  
 //Функція для відкриття бокогового пошуку
@@ -43,6 +108,9 @@ const rightSisebar=()=>{
     };
   }, []);
 
+
+
+  
   if (!isSidebarVisible) return null;
   return (
     <div className={styles.body}>
@@ -137,8 +205,20 @@ const rightSisebar=()=>{
         {/*Пошук */}
         {rSidebar &&(
           <div className={styles.rsidebar}>
-            <input className={styles.rinput} placeholder="Пошук" type="text"/>
-            <div className={styles.usersearch}> тут буде список користувачів які автоматично утворють список по мірі написання в пошуку</div>
+            <input
+  className={styles.rinput}
+  placeholder="Пошук"
+  type="text"
+  value={searchTerm}
+  onChange={handleSearchChange}
+/>
+<div className={styles.usersearch}>
+  {searchResults.map((user) => (
+    <Link key={user.nickName} to={`/profile/${user.nickName}`}>
+      {user.nickName}
+    </Link>
+  ))}
+</div>
           </div>
         )}
         <NavLink
@@ -275,15 +355,24 @@ const rightSisebar=()=>{
         </NavLink>
       </div>
       <div className={styles.avatarWrapper} ref={dropdownRef}>
-      <div className={styles.avatar}onClick={() => setIsDropdownOpen(!isDropdownOpen)}></div>
+      <div
+        className={styles.avatar}
+        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+        style={{
+          backgroundImage: avatarUrl ? `url(${avatarUrl})` : "none",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      ></div>
+
       {isDropdownOpen && (
-          <div className={styles.dropdown}>
-            <ul>
-              <li onClick={exit}>Вийти</li>
-            </ul>
-          </div>
-        )}
-      </div>
+        <div className={styles.dropdown}>
+          <ul>
+            <li onClick={exit}>Вийти</li>
+          </ul>
+        </div>
+      )}
+    </div>
     </div>
   );
 };

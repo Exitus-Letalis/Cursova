@@ -141,8 +141,21 @@ align-items: center;
  // box-sizing: border-box;
   padding-right: 40px;
   }
-  .usersearch{
-    margin-top: 20px;
-    background-color: #166ac4;
-    height: 100%;
+  .usersearch {
+    margin-top: 40px;
+    display: flex;             /* включає флекс-контейнер */
+    flex-direction: column;    /* елементи стають у стовпчик */
+    gap: 15px;                 /* відстань між ними */
+    overflow-y: auto;          /* дозволяє прокручувати, якщо багато результатів */
+    max-height: 80vh;          /* обмеження висоти (за бажанням) */
+  }
+  
+  .usersearch a {
+    background-color: #ffffff33;  /* трохи прозорий фон */
+    padding: 15px;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Kameron', serif;
+    font-size: 15px;
   }

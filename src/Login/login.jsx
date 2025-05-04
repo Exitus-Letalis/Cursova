@@ -47,7 +47,7 @@ const Log = () => {
   const handleRegisSubmit = (e) => {
     e.preventDefault();
     axios
-      .post('http://localhost:7777/api/auth/register', userDataregis)
+      .post('http://localhost:8010/api/auth/register', userDataregis)
       .then((res) => {
         console.log('Успішно:', res.data);
         alert("Успішна тестова реєстрація");
@@ -64,7 +64,7 @@ const Log = () => {
   const handleLoginSubmit = (e) => {
     e.preventDefault();
     axios
-      .post('http://localhost:7777/api/auth/login', userData)
+      .post('http://localhost:8010/api/auth/login', userData)
       .then((res) => {
         console.log('Успішно:', res.data);
         alert("Успішний тестовий логін");

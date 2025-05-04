@@ -78,19 +78,10 @@
   object-fit: cover;
 }
 .descriptionTitle {
-  
-  background-color: aquamarine;
-  width: 430px;
-  margin-top: 15px;
-  margin-left: 310px;
-  font-size: 19px;
+  margin-top: 10px;
+  font-size: 18px;
   color: white;
   font-family: 'Kameron', serif;
-  text-align:start; /* Центрування тексту по горизонталі */
-  line-height: 20px; /* Вертикальне вирівнювання тексту, можна налаштувати */
-  height: 20px; /* Встановлюємо висоту, щоб контейнер не змінював розміри */
-  overflow: hidden; /* Забезпечуємо, щоб текст не виходив за межі контейнера */
-  padding-right: 10px;
 }
 .nickName {
   margin-top: 5px;
@@ -279,16 +270,20 @@
     cursor: pointer;
     font-size: 16px;
   }
-  .modalActionsdel{
-    display: flex;
-    align-items: center;
+
+  .modalActions button:last-child {
     background: none;
     border: none;
     color: white;
     cursor: pointer;
-    margin-left: -15px;
+    font-size: 16px;
   }
-  
+
+  .fotodescription{
+    color: #ffffff;
+    font-size: 20px;
+    
+  }
   .commentsSection {
     width: 100%;
   }
@@ -335,9 +330,4 @@
     color: white;
     border-radius: 5px;
     cursor: pointer;
-  }
-  .fotodescription{
-    color: #ffffff;
-    font-size: 20px;
-    
   }
