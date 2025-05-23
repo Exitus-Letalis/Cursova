@@ -1,3 +1,4 @@
+@import './src/style/tem';
 .body{
 
     display: flex;
@@ -16,10 +17,50 @@
    flex-wrap: wrap;
    flex-direction: column;
    flex-grow: 1;
-   background-color: rgba(68, 68, 68, 0.192);
+   background-color:var(--bg-color);
 }
 
 .settingtext{
-    color: white;
+    color: var(--text-color);
     font-family: 'Kameron', serif;
+}
+.buttons{
+    display: flex;
+    margin-left: 100px;
+    gap: 50px;
+    border: none;
+
+}
+.button1, .button2,.button3,.button4{
+    display: flex;
+    width: 100px;
+    height: 30px;
+     justify-content: center;
+    align-items: center;
+    border:2px solid black;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.button1{
+    background-color: white;
+    color: black;
+}
+.button2{
+    background-color: black;
+    color: white;
+}
+.button3{
+    background-color: #0074d9;
+    color: white;
+}
+.button4{
+    background-color: #ff0000;
+    color: white;
+}
+
+.h1, .h2{
+color: var(--text-color);
+margin-left: 100px;
+margin-top: 60px;
 }

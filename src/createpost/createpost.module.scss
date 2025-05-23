@@ -16,7 +16,7 @@
    flex-wrap: wrap;
    flex-direction: column;
    flex-grow: 1;
-   background-color: rgba(68, 68, 68, 0.192);
+   background-color: var(--bg-color);
 }
 
 
@@ -26,7 +26,7 @@
  align-items: center;
  justify-content: center;
  flex-direction: column;
- color: #ffffff;
+ color: var(--text-color);
  font-size: 30px;
  font-family: 'Kameron', serif;
  
@@ -34,10 +34,10 @@
   
   .foto {
     margin-top: 20px;
-    color:  #ffffff;   
+    color:  var(--text-color);  
     width: 600px;
     height: 500px;
-    border: 2px dashed #ccc;
+    border: 2px dashed var(--foto-border-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,28 +52,28 @@
      margin-top: 50px;
   background: transparent;
   outline: none;
-  border: 2px solid #166ac4;
+  border: 2px solid var(--border-color);
   border-radius: 10px;
   font-size: 16px;
-  color:  #ffffff;
+  color:  var(--text-color);
   padding-left: 10px;
   box-sizing: border-box;
   padding-right: 14px;
   font-family: 'Kameron', serif;
   }
   .description::placeholder{
-    color:  #ffffff;
+    color:  var(--text-color);
   }
 
   .but{
     margin-top: 20px;
     width: 200px;
-    background: #166ac4;
+    background: var(--butcr-color);
     border: none;
     border-radius: 20px;
     height: 40px;
     font-family: 'Kameron', serif;
-    color: #ffffff;
+    color: var(--text-color);
     font-size: 16px;
     z-index: 100;
     cursor: pointer;

@@ -1,13 +1,4 @@
-.main {
-  position: fixed;
- // background-color: rgba(68, 68, 68, 0.192); /* Сірий фон */
-  width: 1000px;
-  height: 100vh;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%); /* Центрування по горизонталі */
-}
-
+@import './src/style/tem';
 .storis {
   width: 1000px;
   position: absolute;
@@ -28,8 +19,8 @@
 
 .postItem {
   width: 100%;
-  height: 500px;
-  background-color: rgba(68, 68, 68, 0.274);
+  height: 550px;
+  background-color: var(--bg-color);
   padding: 15px;
   margin-bottom: 40px;
   border-radius: 8px;
@@ -56,14 +47,17 @@
 }
 
 .userName {
-  color: black;
+  color: var(--username-color);
   font-weight: bold;
 }
 
 .postTime {
-  font-size: 12px;
-  color: #ffffff;
-  margin-left: 60px;
+  font-size: 14px;
+  color: var(--posttime-color);
+  gap: 15px;
+  margin-left: 100px;
+  display: inline-flex;
+  align-items: center; /* Для правильного вирівнювання іконки та тексту лайків по вертикалі */
 }
 
 .postImage {
@@ -74,31 +68,163 @@
 
 .postContent {
   width: 800px;             /* Бере всю доступну ширину */
-  height: 400px;            /* Висота для твого поста */
-  background-color: grey;   /* Сірий фон як ти хочеш */
+  height: 400px;            /* Висота для твого поста */   /* Сірий фон як ти хочеш */
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;         /* Якщо фото велике — обрізається */
   border-radius: 10px;      /* Красиві кути */
 }
+.postDescription{
+  color: var(--postdiscr-like-color);
+  font-family: 'Kameron', serif;
+  font-size: 15px; /* Можна налаштувати розмір шрифту */
+  margin-top: 15px;
+ margin-left: 20px;
+}
+
+.likeCount{
+  color: var(--postdiscr-like-color);
+  font-family: 'Kameron', serif;
+  font-size: 15px; /* Можна налаштувати розмір шрифту */
+}
+.like{
+  display: inline-flex;
+  align-items: center; /* Для правильного вирівнювання іконки та тексту лайків по вертикалі */
+  margin-right: 5px; 
+}
 .likeitem{
   position: relative;
-  color: aliceblue;
   display: flex; /* Розташовуємо всі елементи в ряд */
-  align-items: center; /* Вирівнюємо елементи по центру вертикально */
-  gap: 10px;
-  margin-top: 5px;
+  align-items: center; /* Вирівнюємо всі елементи по центру вертикально */
+  gap: 10px; /* Зменшили відстань між елементами */
+  margin-top: 10px;
 }
-.saveitem{
-  position: absolute;
-  color: #ffffff;
-right: 0;
+
+.likebut svg {
+  width: 24px; /* Розмір іконки */
+  height: 24px; /* Розмір іконки */
 }
-.likebut, .sendbut, .commentbut, .savebut{
+
+.savebut{
+  margin-left: 655px;
+  border: none; 
+  outline: none;
+  cursor: pointer;
+  background: none;
+  z-index: 1;
+  display: inline-flex;
+}
+.likebut, .sendbut, .commentbut{
     border: none; 
     outline: none;
     cursor: pointer;
     background: none;
     z-index: 1;
+    display: inline-flex;
+    align-items: center; 
+}
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--modalover-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: var(--modalcontent-bg-color);
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modalImage {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.modalActionslike {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  color: var(--modallike-color);
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.fotodescription {
+  color: #ffffff;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.commentsSection {
+  width: 100%;
+}
+
+.commentsList {
+  max-height: 150px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.commentItem {
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: var(--modalcomment-color);
+}
+
+.commentsName {
+  color: var(--modalcomname-color);
+  font-weight: bold;
+}
+
+.commentInput {
+  display: flex;
+  gap: 10px;
+}
+
+.commentInput ::placeholder {
+  color: var(--modalcomplays-color);
+}
+
+.commentInput input {
+  flex: 1;
+  padding: 6px;
+  border-radius: 5px;
+  background: transparent;
+  border: 2px solid var(--modalcominput-border-volor);
+  color: var(--text-color);
+  font-size: 16px;
+  outline: none;
+}
+
+.commentInput button {
+  padding: 6px 12px;
+  border: none;
+  background-color: var(--modalcominput-border-volor);
+  color: var(--modalcom-input-color);
+  border-radius: 5px;
+  cursor: pointer;
 }

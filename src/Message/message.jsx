@@ -66,11 +66,9 @@ const Message = () => {
                 <p>Завантаження...</p>
               ) : friends.length === 0 ? (
                 <div className={styles.emptyState}>
-                  <img src="/images/empty-messages.png" alt="Немає повідомлень" />
+                 
                   <p>У вас ще немає повідомлень</p>
-                  <button onClick={() => alert("Знайдіть друзів, щоб написати повідомлення!")}>
-                    Знайти друзів
-                  </button>
+                  
                 </div>
               ) : (
                 friends.map((friend) => (

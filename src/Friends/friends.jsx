@@ -1,91 +1,20 @@
-import React, { useEffect, useState } from "react";
-import { jwtDecode } from "jwt-decode";
-import { useNavigate } from "react-router-dom"; // ⬅️ додано
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import globalstyles from "../style/allstyle.module.scss";
 import styles from "./friends.module.scss";
+import { useFriends } from "./friendsfunck";
 
 const Friends = () => {
-  const [friends, setFriends] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const navigate = useNavigate(); // ⬅️ додано
+  const {
+    friends,
+    loading,
+    error,
+    searchQuery,
+    setSearchQuery,
+    handleRemoveFriend,
+  } = useFriends();
 
-  useEffect(() => {
-    const fetchFriends = async () => {
-      try {
-        const token = localStorage.getItem("token");
-        if (!token) throw new Error("Користувач не авторизований");
-
-        const decoded = jwtDecode(token);
-        const myNickName = decoded.NickName || decoded.nickname;
-        if (!myNickName) throw new Error("Нікнейм не знайдено в токені");
-
-        const userRes = await fetch(`http://localhost:8010/api/users/${myNickName}`);
-        if (!userRes.ok) throw new Error("Не вдалося отримати дані користувача");
-        const user = await userRes.json();
-
-        const subscriptions = user.subscriptions || [];
-        const subscribers = user.subscribers || [];
-
-        const mutualNicknames = subscriptions.filter(nick => subscribers.includes(nick));
-
-        const mutualFriendsData = await Promise.all(
-          mutualNicknames.map(async (nick) => {
-            try {
-              const res = await fetch(`http://localhost:8010/api/users/${nick}`);
-              if (!res.ok) return null;
-              return await res.json();
-            } catch {
-              return null;
-            }
-          })
-        );
-
-        const validFriends = mutualFriendsData.filter(Boolean);
-        setFriends(validFriends);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchFriends();
-  }, []);
-
-  const handleRemoveFriend = async (friendNickName) => {
-    try {
-      const token = localStorage.getItem("token");
-      if (!token) throw new Error("Користувач не авторизований");
-
-      const decoded = jwtDecode(token);
-      const myNickName = decoded.NickName || decoded.nickname;
-      if (!myNickName) throw new Error("Нікнейм не знайдено в токені");
-
-      const response = await fetch("http://localhost:8004/api/users/unsubscribe", {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`
-        },
-        body: JSON.stringify({
-          currentNickName: myNickName,
-          targetNickName: friendNickName
-        })
-      });
-
-      if (!response.ok) throw new Error("Не вдалося відписатись від користувача");
-
-      setFriends(prev => prev.filter(f => f.nickName !== friendNickName));
-    } catch (err) {
-      setError(err.message);
-    }
-  };
-
-  const filtered = friends.filter(friend =>
-    friend.nickName.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const navigate = useNavigate();
 
   return (
     <>
@@ -107,11 +36,11 @@ const Friends = () => {
               <p className={styles.emptyText}>Завантаження...</p>
             ) : error ? (
               <p className={styles.emptyText}>{error}</p>
-            ) : filtered.length === 0 ? (
+            ) : friends.length === 0 ? (
               <p className={styles.emptyText}>У вас ще немає друзів</p>
             ) : (
               <div className={styles.friendslist}>
-                {filtered.map((friend, index) => (
+                {friends.map((friend, index) => (
                   <div key={index} className={styles.friends}>
                     <div className={styles.friendsfoto}>
                       <img
@@ -131,7 +60,7 @@ const Friends = () => {
                       <button className={styles.buttons}>Повідомлення</button>
                       <button
                         className={styles.buttons}
-                        onClick={() => navigate(`/profile/${friend.nickName}`)} // ⬅️ переадресація
+                        onClick={() => navigate(`/profile/${friend.nickName}`)}
                       >
                         Профіль
                       </button>

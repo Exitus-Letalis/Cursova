@@ -1,3 +1,4 @@
+@import './src/style/tem';
 .body{
 
     display: flex;
@@ -21,13 +22,13 @@
 }
 
 .settingtext{
-    color: rgb(255, 255, 255);
+    color: var(--settingtext-color);
     font-family: 'Kameron', serif;
 }
 
 .input, .textarea {
     height: 40px;
-    background: #166ac457;
+    background: var(--input-bg-color);
     margin-bottom: 10px;
     padding: 8px;
     font-size: 16px;
@@ -35,9 +36,9 @@
     box-sizing: border-box;
     border: none;
   outline: none;
-  border: 2px solid #166ac4;
+  border: 2px solid var(--input-border-color);
   border-radius: 15px;
-  color: white;
+  color: var(--input-text-color);
     font-family: 'Kameron', serif;
   }
   
@@ -66,18 +67,18 @@
    height: 45px;
    border: none;
    outline: none;
-   background-color: #166ac4;
+   background-color: var(--savebut-bg-color);
    border-radius: 40px;
    box-shadow: 0 0 10px rgb(255, 255, 255, .1);
    cursor: pointer;
    font-size: 16px;
-   color: #ffffff;
+   color: var(--input-text-color);
    font-weight: 600;
    appearance: none;
   }
   
   .saveButton:hover {
-    background-color:  #1462b6;
+    background-color:  var(--savebut-bg-color-hover);
   }
   
   label {

@@ -1,0 +1,203 @@
+/* Базові змінні — обов'язково */
+:root {
+  --bg-color: rgba(78, 78, 78, 0.096);
+  --text-color: black;
+  --border-color: #ccc;
+  --wrap-bg: rgba(0, 0, 0, 0.253);
+  --bg-image:url('./white.jpg');
+  --but-color:rgb(0, 0, 0);
+  --butcr-color:rgb(221, 221, 221);
+        --bg-blur:none;
+        --bg-scroll-track:#ffffff;
+        --bg-scroll-tr:#000000;
+        --bg-scroll-hover:#788c97;
+        --serach-color:rgba(255, 255, 255, 0.815);
+        --friends-search-bg-color:#ffffff;
+        --friends-serach-color:rgb(0, 0, 0);
+ //post
+ --foto-border-color:#000000;
+ //main
+ --username-color:rgb(0, 0, 0);
+ --posttime-color:#000000;
+ --postdiscr-like-color:#000000;
+ --modalover-bg-color:rgba(0, 0, 0, 0.6);
+ --modalcontent-bg-color:#bbbbbb;
+ --modallike-color:rgb(0, 0, 0);//
+ --modalcomment-color: #000000;
+ --modalcomname-color:#000000;
+ --modalcomplays-color:#5a5a5ab9;
+ --modalcominput-border-volor:#747272;
+ --modalcom-input-color:#ffffff;
+ //search
+ --rinput-color:rgb(0, 0, 0);
+ //userprofile
+--userprof-bg-color:rgba(197, 197, 197, 0.637);
+--inform-color:rgb(0, 0, 0);
+--button-border-color:rgb(0, 0, 0);
+--button-text-color:rgb(0, 0, 0);
+--save-but-color:rgb(0, 0, 0);
+//redag
+--settingtext-color:rgb(0, 0, 0);
+--input-bg-color:#9c9c9c2a;
+--input-border-color:#747474;
+--input-text-color:rgb(0, 0, 0);
+--savebut-bg-color:#dfdfdf;
+--savebut-bg-color-hover:#e9e9e9;
+}
+
+/* Темна тема */
+[data-theme="dark"] {
+        --bg-color: rgba(107, 107, 107, 0.178);
+        --text-color: #ffffff;
+        --border-color: #333;
+        --wrap-bg: rgba(255, 255, 255, 0.1);
+        --bg-image:url('./dark2.jpg') ;
+        --but-color:rgb(0, 0, 0);
+        --butcr-color:rgb(0, 0, 0);
+        --bg-blur:none;
+        --bg-scroll-track:#747474;
+        --bg-scroll-tr:#ffffff;
+        --bg-scroll-hover:#788c97;
+        --serach-color:rgba(218, 218, 218, 0.144);
+        --friends-search-bg-color:#ffffff;
+        --friends-serach-color:rgb(0, 0, 0);
+ //post
+ --foto-border-color:#ffffff;
+ //main
+ --username-color:rgb(255, 255, 255);
+ --posttime-color:#ffffff;
+ --postdiscr-like-color:#ffffff;
+ --modalover-bg-color:rgba(0, 0, 0, 0.815);
+ --modalcontent-bg-color:#000000;
+ --modallike-color:rgb(255, 255, 255);//
+ --modalcomment-color: #ffffff;
+ --modalcomname-color:#ffffff;
+ --modalcomplays-color:#ffffffb9;
+ --modalcominput-border-volor:#ffffff;
+ --modalcom-input-color:#000000;
+ //search
+ --rinput-color:black;
+ //userprofile
+--userprof-bg-color:rgba(68, 68, 68, 0.192);
+--inform-color:white;
+--button-border-color:rgb(255, 255, 255);
+--button-text-color:rgb(255, 255, 255);
+--save-but-color:white;
+//redag
+--settingtext-color:rgb(255, 255, 255);
+--input-bg-color:#166ac42a;
+--input-border-color:#949494;
+--input-text-color:white;
+--savebut-bg-color:#616161;
+--savebut-bg-color-hover:#444444;
+
+}
+
+/* Синя тема */
+[data-theme="blue"] {
+  //login
+  --bg-color: rgb(0, 31, 63, 0.192);
+  --text-color: #ffffff;
+  --border-color: #0074d9;
+  --wrap-bg: rgba(8, 26, 43, 0.062);
+ --bg-image:url('../Login/back32.jpeg');
+ --but-color:#0074d9;
+ --butcr-color:#0074d9;
+ //friends
+ --serach-color:rgba(255, 255, 255, 0.144);
+ --friends-search-bg-color:#ffffff3b;
+ --friends-serach-color:rgb(255, 255, 255);
+ --bg-blur:blur(1px);
+ //scroll
+ --bg-scroll-track:#1C5D95;
+ --bg-scroll-tr:#3CB1F4;
+ --bg-scroll-hover:#37a3e2;
+ //post
+ --foto-border-color:#ffffff;
+ //main
+ --username-color:black;
+ --posttime-color:#ffffff;
+ --postdiscr-like-color:#ffffff;
+ --modalover-bg-color:rgba(0, 0, 0, 0.6);
+ --modalcontent-bg-color:#1C5D95;
+ --modallike-color:rgb(255, 255, 255);//
+ --modalcomment-color: #ffffff;
+ --modalcomname-color:#ffffff;
+ --modalcomplays-color:#ffffffb9;
+ --modalcominput-border-volor:#1a7be4;
+ --modalcom-input-color:#ffffff;
+ //search
+ --rinput-color:black;
+ //userprofile
+--userprof-bg-color:rgba(68, 68, 68, 0.192);
+--inform-color:white;
+--button-border-color:rgb(255, 255, 255);
+--button-text-color:rgb(255, 255, 255);
+--save-but-color:white;
+//redag
+--settingtext-color:rgb(255, 255, 255);
+--input-bg-color:#166ac42a;
+--input-border-color:#166ac4;
+--input-text-color:white;
+--savebut-bg-color:#166ac4;
+--savebut-bg-color-hover:#1462b6;
+
+}
+
+/* Зелена тема */
+[data-theme="red"] {
+  --bg-color: rgba(70, 70, 70, 0.192);
+  --text-color: #ffffff;
+  --border-color: #ffffff;
+  --wrap-bg: rgba(255, 255, 255, 0.11);
+  --bg-image:url('./red.png');
+  --but-color:rgb(0, 0, 0);
+  --serach-color:rgba(255, 255, 255, 0.377);
+ --friends-search-bg-color:#ffffff;
+ --friends-serach-color:black;
+ --bg-blur:blur(1px);
+ --bg-scroll-track:#747474;
+ --bg-scroll-tr:#707070;
+ --bg-scroll-hover:#788c97;
+
+  
+  --butcr-color:rgb(102, 102, 102);
+        --bg-blur:none;
+        --bg-scroll-track:#ff0000;
+        --bg-scroll-tr:#ffffff;
+        --bg-scroll-hover:#788c97;
+        --serach-color:rgba(88, 88, 88, 0.815);
+        --friends-search-bg-color:#ffffff;
+        --friends-serach-color:rgb(0, 0, 0);
+ //post
+ --foto-border-color:#ffffff;
+ //main
+ --username-color:rgb(255, 255, 255);
+ --posttime-color:#ffffff;
+ --postdiscr-like-color:#ffffff;
+ --modalover-bg-color:rgba(0, 0, 0, 0.6);
+ --modalcontent-bg-color:#920000;
+ --modallike-color:rgb(255, 255, 255);//
+ --modalcomment-color: #ffffff;
+ --modalcomname-color:#ffffff;
+ --modalcomplays-color:#ffffffb9;
+ --modalcominput-border-volor:#000000;
+ --modalcom-input-color:#ffffff;
+ //search
+ --rinput-color:rgb(0, 0, 0);
+ //userprofile
+--userprof-bg-color:rgba(70, 70, 70, 0.192);
+--inform-color:rgb(255, 255, 255);
+--button-border-color:rgb(255, 255, 255);
+--button-text-color:rgb(255, 255, 255);
+--save-but-color:rgb(255, 255, 255);
+//redag
+--settingtext-color:rgb(255, 255, 255);
+--input-bg-color:#4242422a;
+--input-border-color:#ffffff;
+--input-text-color:rgb(255, 255, 255);
+--savebut-bg-color:#505050;
+--savebut-bg-color-hover:#363636;
+//setting
+
+}

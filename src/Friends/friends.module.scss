@@ -1,3 +1,4 @@
+@import './src/style/tem';
 .body{
 
     display: flex;
@@ -16,12 +17,12 @@
    flex-wrap: wrap;
    flex-direction: column;
    flex-grow: 1;
-   background-color: rgba(68, 68, 68, 0.192);
+   background-color: var(--bg-color);
    
 }
 
 .settingtext{
-    color: white;
+    color: var(--text-color);
     font-family: 'Kameron', serif;
     
 }
@@ -33,28 +34,25 @@
    
 }
 .search{
-    color: rgb(0, 0, 0);
+    color: var( --friends-serach-color);
     font-family: 'Kameron', serif;
     width: 80vh;
     height: 40px;
     border-radius: 20px;
-    background: #ffffff3b;
+    background: var(--friends-search-bg-color);
     border: none;
   outline: none;
   padding-left: 20px;
   font-size: 17px;
 }
-::placeholder{
-    color: aliceblue;
-}   
+
 .friendslist {
- //   background-color: rgba(240, 248, 255, 0.158);
     width: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: auto; /* Центрує сам блок по горизонталі */
+    margin: auto; 
     margin-top: 40px;
     gap: 30px;
   }
@@ -62,12 +60,12 @@
     display: flex;
   }
   .buttons{
-    color: #ffffff;
+    color: var(--text-color);
     height: 35px;
     width: 150px;
     background: none;
     border-radius: 20px;
-    border: 2px solid #ffffff;
+    border: 2px solid var(--text-color);
     font-size: 15px;
     margin-left: 70px;
     
@@ -76,7 +74,7 @@
   .friends {
     padding: 20px;
     width: 70vh;
-    color: rgb(0, 0, 0);
+    color: var(--text-color);
   }
   .friendsfoto {
     float: left;

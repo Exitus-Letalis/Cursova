@@ -1,3 +1,4 @@
+@import './src/style/tem';
 .back {
     position: fixed;
     top: 0px;
@@ -15,8 +16,8 @@
     left: -1px;
     width: 120%;
     height: 120%;
-    background: url('../Login/back32.jpeg') ;
-    filter: blur(1px); /* Розмиття */
+    background: var(--bg-image) ;
+    filter: var(--bg-blur); /* Розмиття */
 }
 
 ::-webkit-scrollbar {
@@ -25,16 +26,16 @@
   
   /* Стилізуємо доріжку (фон скролбара) */
   ::-webkit-scrollbar-track {
-    background: #1C5D95; /* Колір фону */
+    background: var(--bg-scroll-track); /* Колір фону */
   }
   
   /* Стилізуємо повзунок (сам скрол) */
   ::-webkit-scrollbar-thumb {
-    background: #3CB1F4; /* Колір повзунка */
+    background: var(--bg-scroll-tr); /* Колір повзунка */
     border-radius: 4px;
   }
   
   /* Зміна кольору повзунка при наведенні */
   ::-webkit-scrollbar-thumb:hover {
-    background: #37a3e2;
+    background: var(--bg-scroll-hover);
   }
