@@ -16,26 +16,26 @@ const Stories = ({ onOpenStoryModal }) => {
         const decoded = jwtDecode(token);
         const myNickName = decoded.NickName || decoded.nickname;
         if (!myNickName) throw new Error("Нікнейм не знайдено в токені");
-        console.log("Мій нікнейм:", myNickName);
+      //  console.log("Мій нікнейм:", myNickName);
 
         const subscriptionsRes = await axios.get(`http://localhost:8010/api/users/${myNickName}`);
         const subscriptions = subscriptionsRes.data.subscriptions || [];
-        console.log("Підписки:", subscriptions);
+      //  console.log("Підписки:", subscriptions);
 
         const allStoriesDetails = [];
 
         for (const nick of subscriptions) {
           try {
             const userStoriesRes = await axios.get(`http://localhost:8003/api/users/${nick}/stories`);
-            console.log("Отримані дані від API:", userStoriesRes.data);
+         //   console.log("Отримані дані від API:", userStoriesRes.data);
             const storyIds = userStoriesRes.data;
-            console.log(`Отримані storyId для ${nick}:`, storyIds);
+          //  console.log(`Отримані storyId для ${nick}:`, storyIds);
 
             if (Array.isArray(storyIds)) {
               for (const storyIdObject of storyIds) {
-                const actualStoryId = storyIdObject?.storyId; // Ось виправлення
+                const actualStoryId = storyIdObject?.storyId; 
                 if (!actualStoryId) {
-                  console.warn(`Недійсний ID сторіс отримано для ${nick}:`, storyIdObject);
+             //     console.warn(`Недійсний ID сторіс отримано для ${nick}:`, storyIdObject);
                   continue;
                 }
 
@@ -44,24 +44,24 @@ const Stories = ({ onOpenStoryModal }) => {
                   if (storyDetailsRes.data && storyDetailsRes.data.storyImageUrl) {
                     allStoriesDetails.push(storyDetailsRes.data);
                   } else {
-                    console.warn(`Не вдалося отримати деталі або немає URL для сторіс ${actualStoryId} від ${nick}:`, storyDetailsRes.data);
+               //     console.warn(`Не вдалося отримати деталі або немає URL для сторіс ${actualStoryId} від ${nick}:`, storyDetailsRes.data);
                   }
                 } catch (err) {
-                  console.warn(`Помилка при отриманні деталей сторіс ${actualStoryId} від ${nick}:`, err.message);
+              //    console.warn(`Помилка при отриманні деталей сторіс ${actualStoryId} від ${nick}:`, err.message);
                 }
               }
             } else {
-              console.warn(`Отримано недійсний формат ID сторіс для ${nick}:`, userStoriesRes.data);
+            //  console.warn(`Отримано недійсний формат ID сторіс для ${nick}:`, userStoriesRes.data);
             }
           } catch (error) {
-            console.warn(`Помилка при отриманні ID сторіс для ${nick}:`, error.message);
+          //  console.warn(`Помилка при отриманні ID сторіс для ${nick}:`, error.message);
           }
         }
 
-        console.log("Отримані деталі сторіс:", allStoriesDetails);
+       // console.log("Отримані деталі сторіс:", allStoriesDetails);
         setStories(allStoriesDetails);
       } catch (err) {
-        console.error("Помилка при завантаженні сторіс:", err);
+      //  console.error("Помилка при завантаженні сторіс:", err);
       }
     };
 
@@ -77,7 +77,7 @@ const Stories = ({ onOpenStoryModal }) => {
   };
 
   const handleStoryClick = (story) => {
-    console.log("Клікнуто на сторіс:", story);
+   // console.log("Клікнуто на сторіс:", story);
     onOpenStoryModal(story);
   };
 

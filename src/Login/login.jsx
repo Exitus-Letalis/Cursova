@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./log.module.scss"; 
-import lock from "./lock.png";
-import user from "./user.png";
+
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -43,9 +42,9 @@ const handleRegisSubmit = (e) => {
   axios
     .post('http://localhost:8010/api/auth/register', userDataregis)
     .then((res) => {
-      console.log('Відповідь сервера:', res.data); 
+     // console.log('Відповідь сервера:', res.data); 
       const token = res.data;  
-      console.log("Отриманий токен:", token);  
+     // console.log("Отриманий токен:", token);  
       if (token) {
         localStorage.setItem("token", token);  
         navigate("/mainpage");  
@@ -54,8 +53,8 @@ const handleRegisSubmit = (e) => {
       }
     })
     .catch((err) => {
-      console.error("Помилка реєстрації", err);
-      alert("Помилка тестової реєстрації");
+     // console.error("Помилка реєстрації", err);
+      alert("Помилка  реєстрації");
     });
 };
 
@@ -64,19 +63,19 @@ const handleLoginSubmit = (e) => {
   axios
     .post('http://localhost:8010/api/auth/login', userData)
     .then((res) => {
-      console.log('Відповідь сервера:', res.data);  // Вивести всю відповідь
-      const token = res.data.token;  // Витягнути сам токен
-      console.log("Отриманий токен:", token);  // Логування токену
+     // console.log('Відповідь сервера:', res.data);  
+      const token = res.data.token;  
+     // console.log("Отриманий токен:", token);  
       if (token) {
-        localStorage.setItem("token", token);  // Зберегти тільки токен
-        navigate("/mainpage");  // Перехід на головну сторінку
+        localStorage.setItem("token", token);  
+        navigate("/mainpage");  
       } else {
-        alert("Помилка: Токен не отримано");  // Якщо токен відсутній
+        alert("Помилка: Токен не отримано");  
       }
     })
     .catch((err) => {
-      console.error("Помилка логіну", err);
-      alert("Помилка входу тестового логіну");
+     // console.error("Помилка логіну", err);
+      alert("Помилка входу");
     });
 };
 

@@ -69,7 +69,7 @@ const Profile = () => {
       setSelectedPost(res.data);
       setNewComment("");
     } catch (error) {
-      console.error("Помилка при відкритті модального:", error);
+    //  console.error("Помилка при відкритті модального:", error);
     }
   };
 
@@ -84,7 +84,7 @@ const Profile = () => {
       const res = await axios.get(`http://localhost:8002/api/posts/${selectedPost.postId}`);
       setSelectedPost(res.data);
     } catch (error) {
-      console.error("Помилка при лайкуванні:", error);
+     // console.error("Помилка при лайкуванні:", error);
     }
   };
 
@@ -109,7 +109,7 @@ const Profile = () => {
       setSavedPhotos(prev => prev.filter(p => p.postId !== selectedPost.postId));
       closeModal(); 
     } catch (error) {
-      console.error("Помилка при видаленні із збережених:", error);
+     // console.error("Помилка при видаленні із збережених:", error);
     }
   };
   
@@ -129,7 +129,7 @@ const Profile = () => {
       setSelectedPost(res.data);
       setNewComment("");
     } catch (error) {
-      console.error("Помилка при додаванні коментаря:", error);
+     // console.error("Помилка при додаванні коментаря:", error);
     }
   };
 
@@ -155,7 +155,6 @@ const Profile = () => {
 
           <div className={styles.redagbutton}>
             <div className={styles.buttonredagpros} onClick={handleEditClick}>Редагувати профіль</div>
-            <div className={styles.buttonlook}>Переглянути архів</div>
           </div>
 
           <div className={styles.likeinform}>

@@ -9,8 +9,8 @@ const Friends = () => {
     friends,
     loading,
     error,
-    searchQuery,
-    setSearchQuery,
+    search,
+    setSearch,
     handleRemoveFriend,
   } = useFriends();
 
@@ -27,8 +27,8 @@ const Friends = () => {
                 className={styles.search}
                 type="text"
                 placeholder="Пошук"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
               />
             </div>
 
@@ -57,7 +57,6 @@ const Friends = () => {
                     <div className={styles.Nickname}>{friend.nickName}</div>
                     <div className={styles.friendsmeesage}>{friend.email}</div>
                     <div className={styles.mainbuttons}>
-                      <button className={styles.buttons}>Повідомлення</button>
                       <button
                         className={styles.buttons}
                         onClick={() => navigate(`/profile/${friend.nickName}`)}

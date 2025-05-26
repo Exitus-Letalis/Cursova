@@ -6,7 +6,7 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: -1; /* Поміщає фон позаду всього контенту */
+    z-index: -1; 
 }
 
 .back::before {
@@ -17,25 +17,24 @@
     width: 120%;
     height: 120%;
     background: var(--bg-image) ;
-    filter: var(--bg-blur); /* Розмиття */
+    filter: var(--bg-blur); 
 }
 
 ::-webkit-scrollbar {
-    width: 6px; /* Товщина скролбара */
+    width: 6px; 
   }
-  
-  /* Стилізуємо доріжку (фон скролбара) */
+
   ::-webkit-scrollbar-track {
-    background: var(--bg-scroll-track); /* Колір фону */
+    background: var(--bg-scroll-track); 
   }
   
-  /* Стилізуємо повзунок (сам скрол) */
+
   ::-webkit-scrollbar-thumb {
-    background: var(--bg-scroll-tr); /* Колір повзунка */
+    background: var(--bg-scroll-tr); 
     border-radius: 4px;
   }
   
-  /* Зміна кольору повзунка при наведенні */
+
   ::-webkit-scrollbar-thumb:hover {
     background: var(--bg-scroll-hover);
   }

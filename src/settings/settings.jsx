@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+
 import globalstyles from "../style/allstyle.module.scss";
 import styles from "./settings.module.scss";
 import { useContext } from 'react';
@@ -16,10 +16,10 @@ const Settings = () =>{
             <div className={styles.settingtext}>
                 <h1 className={styles.h1}>Змінити тему</h1>
                 <div className={styles.buttons}>
-            <button className={styles.button1} onClick={() => setTheme('light')}>Світла</button>
-      <button  className={styles.button2} onClick={() => setTheme('dark')}>Темна</button>
-      <button  className={styles.button3} onClick={() => setTheme('blue')}>Синя</button>
-      <button  className={styles.button4} onClick={() => setTheme('red')}>Червона</button>
+            <button className={styles.button1} onClick={() => setTheme('Світла')}>Світла</button>
+      <button  className={styles.button2} onClick={() => setTheme('Темна')}>Темна</button>
+      <button  className={styles.button3} onClick={() => setTheme('Синя')}>Синя</button>
+      <button  className={styles.button4} onClick={() => setTheme('Червона')}>Червона</button>
       </div>
       <h2 className={styles.h2}>Поточна тема: {theme}</h2>
             </div>

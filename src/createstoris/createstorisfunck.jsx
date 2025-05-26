@@ -30,7 +30,6 @@ export const useCreateStory = () => {
 
         setImageUrl(`http://localhost:8001/Resources/${data.fileUrl}`);
       } catch (err) {
-        console.warn(err);
         alert("Помилка завантаження фотографії");
       }
     }
@@ -52,7 +51,6 @@ export const useCreateStory = () => {
       console.log("Сторіс ID:", data.storiesId);
       navigate("/mainpage");
     } catch (err) {
-      console.warn("Помилка при надсиланні сторіс:", err);
       alert("Не вдалося створити сторіс");
     }
   };

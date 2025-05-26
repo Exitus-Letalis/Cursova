@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from "./sidebar.module.scss";
-import { Link } from "react-router-dom"; // Імпортуємо Link
+import { Link } from "react-router-dom"; 
 import { useLocation } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import{useNavigate} from "react-router-dom";
@@ -20,36 +20,31 @@ const [avatarUrl, setAvatarUrl] = useState(null);
 useEffect(() => {
   const token = localStorage.getItem("token");
 
-  if (!token) {
-    console.error("Token not found");
-    return;
-  }
-
   let decodedToken;
   try {
     decodedToken = jwtDecode(token);
   } catch (error) {
-    console.error("Invalid token", error);
+    //console.error("Невірний токен", error);
     return;
   }
 
   const nickName = decodedToken?.NickName;
   if (!nickName) {
-    console.error("NickName not found in token");
+   // console.error("Токен не містить імя");
     return;
   }
 
   const fetchAvatar = async () => {
     try {
       const response = await axios.get(`http://localhost:8010/api/users/${nickName}`);
-      console.log(response.data); 
+     // console.log(response.data); 
       if (response.data?.imageUrl) {
         setAvatarUrl(response.data.imageUrl); 
       } else {
-        console.error("Avatar image URL not found in response");
+     //   console.error("Avatar image URL not found in response");
       }
     } catch (error) {
-      console.error("Помилка при завантаженні аватарки:", error);
+   //   console.error("Помилка при завантаженні аватарки:", error);
     }
   };
 
@@ -71,7 +66,7 @@ const handleSearchChange = async (e) => {
       setSearchResults(results);
     }
   } catch (error) {
-    console.error("Search error:", error);
+ //   console.error("Помилка сервера:", error);
   }
 };
   

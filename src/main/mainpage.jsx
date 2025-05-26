@@ -31,7 +31,7 @@ const [selectedStoryForModal, setSelectedStoryForModal] = useState(null);
         const posts = await fetchPostsForSubscriptions();
         setFilteredPosts(posts);
       } catch (err) {
-        console.error(err);
+      //  console.error(err);
         setError(err);
       } finally {
         setLoading(false);
@@ -76,7 +76,7 @@ const [selectedStoryForModal, setSelectedStoryForModal] = useState(null);
         )
       );
     } catch (err) {
-      console.error("Error in handleLike:", err);
+      //console.error("Не вдалось:", err);
     }
   };
 
@@ -97,15 +97,15 @@ const [selectedStoryForModal, setSelectedStoryForModal] = useState(null);
 
       await axios.patch("http://localhost:8002/api/posts/addcomments", {
         postId: activePost.postId,
-        description: newComment, // це буде новий текст коментаря
-        nickName: myNickName,    // це ваш никнейм
+        description: newComment, 
+        nickName: myNickName,    
       });
 
-      // Після відправки на сервер
+     
       const updatedPostRes = await axios.get(`http://localhost:8002/api/posts/${activePost.postId}`);
       const updatedPost = updatedPostRes.data;
 
-      // Оновлюємо локальний стан після отримання актуальних даних
+     
       setFilteredPosts((prevPosts) =>
         prevPosts.map((post) =>
           post.postId === activePost.postId
@@ -120,7 +120,7 @@ const [selectedStoryForModal, setSelectedStoryForModal] = useState(null);
       }));
       setNewComment("");
     } catch (err) {
-      console.error("Error in handleCommentSubmit:", err);
+      //console.error("Не вдалось коментувати:", err);
     }
   };
   const savePost = async (postId, nickName) => {
@@ -140,9 +140,9 @@ const [selectedStoryForModal, setSelectedStoryForModal] = useState(null);
         throw new Error('Не вдалося зберегти публікацію');
       }
   
-      console.log('Публікація збережена');
+     alert('Публікація збережена');
     } catch (error) {
-      console.error('Помилка при збереженні:', error);
+      //console.error('Помилка при збереженні:', error);
     }
   };
   const closeStoryModal = () => {

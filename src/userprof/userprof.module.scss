@@ -25,9 +25,9 @@
     flex-direction: column;
     position: relative;
     background-image: var(--bg-image);
-    background-size: cover; /* Масштабування зображення, щоб воно покривало весь блок */
-    background-position: center; /* Відображення центру зображення */
-    background-repeat: no-repeat; /* Заборона повторення фонового зображення */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
  
 }
 
@@ -41,7 +41,7 @@
     position: relative;
   
 
-    overflow: hidden; /* Фото не будуть виходити за межі */
+    overflow: hidden; 
 }
 
 .maininfo {
@@ -91,10 +91,10 @@
     right: 20px;
     top: 32vh;
     z-index: 2;
-    display: flex; /* Робимо контейнер флексом */
-    justify-content:center; /* Розподіляємо кнопки по краях */
+    display: flex; 
+    justify-content:center; 
     gap: 20px;
-    align-items: center; /* Вирівнюємо по вертикалі */
+    align-items: center; 
    
 }
 
@@ -124,7 +124,7 @@ color: var(--inform-color);
 }
 
 .public{
-    //background-color: aquamarine;
+    
     margin-top: 170px;
     min-height: 400px;
     display: flex;
@@ -139,10 +139,10 @@ color: var(--inform-color);
     position: absolute;
     z-index: 2;
     width: max-content;
-    max-width: 60%; /* Запобігає виходу за межі */
+    max-width: 60%; 
     align-items: center;
     text-align: center;
-    justify-content: flex-end; /* Притискає текст до правого краю */
+    justify-content: flex-end;
     right: 30px;
     top: 42vh;
     font-size: 22px;
@@ -168,9 +168,9 @@ color: var(--inform-color);
 .foto {
     padding-top: 50px;
     
-    width: 100%; /* Робимо ширину 100% від .prof */
-    max-width: 100%; /* Фото не виходять за межі */
-    justify-content: center; /* Центруємо фото */
+    width: 100%; 
+    max-width: 100%; 
+    justify-content: center; 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
@@ -214,7 +214,7 @@ color: var(--inform-color);
   }
   
   .activeTab {
-    border-bottom: 2px solid var(--inform-color); /* Підкреслення активної вкладки */
+    border-bottom: 2px solid var(--inform-color); 
     font-weight: bold;
   }
   
@@ -260,7 +260,7 @@ color: var(--inform-color);
   .modalActionslike {
     display: flex;
     align-items: center;
-    gap: 10px; // відступ між іконкою та числом
+    gap: 10px; 
     background: none;
     border: none;
     color: var(--modallike-color);

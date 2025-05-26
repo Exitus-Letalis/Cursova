@@ -36,14 +36,14 @@
 .avatar {
   width: 70px;
   height: 70px;
-  border-radius: 50%; /* Круглий */
-  object-fit: cover; /* Правильне масштабування без розтягування */
-  object-position: center; /* Центр зображення */
+  border-radius: 50%; 
+  object-fit: cover; 
+  object-position: center; 
 }
 
 .nameTime {
   display: flex;
-  align-items: center; /* Розташовуємо нік і час по горизонталі */
+  align-items: center; 
 }
 
 .userName {
@@ -57,28 +57,28 @@
   gap: 15px;
   margin-left: 100px;
   display: inline-flex;
-  align-items: center; /* Для правильного вирівнювання іконки та тексту лайків по вертикалі */
+  align-items: center; 
 }
 
 .postImage {
   width: 100%;
   height: 100%;
-  object-fit: cover;        /* Заповнює все, зберігаючи красу */
+  object-fit: cover;     
 }
 
 .postContent {
-  width: 800px;             /* Бере всю доступну ширину */
-  height: 400px;            /* Висота для твого поста */   /* Сірий фон як ти хочеш */
+  width: 800px;           
+  height: 400px;          
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;         /* Якщо фото велике — обрізається */
-  border-radius: 10px;      /* Красиві кути */
+  overflow: hidden;         
+  border-radius: 10px;    
 }
 .postDescription{
   color: var(--postdiscr-like-color);
   font-family: 'Kameron', serif;
-  font-size: 15px; /* Можна налаштувати розмір шрифту */
+  font-size: 15px; 
   margin-top: 15px;
  margin-left: 20px;
 }
@@ -86,24 +86,24 @@
 .likeCount{
   color: var(--postdiscr-like-color);
   font-family: 'Kameron', serif;
-  font-size: 15px; /* Можна налаштувати розмір шрифту */
+  font-size: 15px; 
 }
 .like{
   display: inline-flex;
-  align-items: center; /* Для правильного вирівнювання іконки та тексту лайків по вертикалі */
+  align-items: center; 
   margin-right: 5px; 
 }
 .likeitem{
   position: relative;
-  display: flex; /* Розташовуємо всі елементи в ряд */
-  align-items: center; /* Вирівнюємо всі елементи по центру вертикально */
-  gap: 10px; /* Зменшили відстань між елементами */
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
   margin-top: 10px;
 }
 
 .likebut svg {
-  width: 24px; /* Розмір іконки */
-  height: 24px; /* Розмір іконки */
+  width: 24px; 
+  height: 24px; 
 }
 
 .savebut{

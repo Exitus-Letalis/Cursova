@@ -68,6 +68,7 @@
     border: 2px solid var(--text-color);
     font-size: 15px;
     margin-left: 70px;
+    cursor: pointer;
     
   }
   
@@ -80,7 +81,7 @@
     float: left;
     width: 60px;
     height: 60px;
-    background-color: #ccc; /* тимчасово, поки немає фото */
+    background-color: #ccc; 
     border-radius: 50%;
     overflow: hidden;
     margin-right: 16px;

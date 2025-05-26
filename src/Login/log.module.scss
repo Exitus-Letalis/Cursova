@@ -2,7 +2,7 @@
 @import './src/style/tem';
 .bodys {
   background-image: var(--bg-image);
-  display: flex; /* включаємо flexbox */
+  display: flex; 
   justify-content: center;
   align-items: center;
   min-height: 100vh; 
@@ -140,16 +140,14 @@ text-align: center;
   text-decoration: underline;
 }
 
-
-/* modal.module.scss */
 .modal2 {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* затемнення фону */
+  background: rgba(0, 0, 0, 0.5); 
   display: flex;
-  justify-content: center; /* по горизонталі */
-  align-items: center; /* по вертикалі */
+  justify-content: center; 
+  align-items: center; 
 
 }
 

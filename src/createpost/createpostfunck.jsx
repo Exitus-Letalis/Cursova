@@ -41,7 +41,6 @@ export const useCreatePost = () => {
           imageUrl: `http://localhost:8001/Resources/${data.fileUrl}`,
         }));
       } catch (err) {
-        console.warn(err);
         alert("Помилка завантаження фотографії");
       }
     } else {
@@ -56,10 +55,10 @@ export const useCreatePost = () => {
   const onSubmit = async () => {
     try {
       await axios.post("http://localhost:8002/api/posts", post);
-      console.log("Congrats");
+    //  console.log("Congrats");
       navigate("/mainpage");
     } catch (err) {
-      console.warn(err);
+      //console.warn(err);
     }
   };
 

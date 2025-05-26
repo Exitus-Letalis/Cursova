@@ -3,7 +3,7 @@ import { jwtDecode } from "jwt-decode";
 
 export const useFriends = () => {
   const [friends, setFriends] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -80,15 +80,15 @@ export const useFriends = () => {
   };
 
   const filteredFriends = friends.filter(friend =>
-    friend.nickName.toLowerCase().includes(searchQuery.toLowerCase())
+    friend.nickName.toLowerCase().includes(search.toLowerCase())
   );
 
   return {
     friends: filteredFriends,
     loading,
     error,
-    searchQuery,
-    setSearchQuery,
+    search,
+    setSearch,
     handleRemoveFriend,
   };
 };

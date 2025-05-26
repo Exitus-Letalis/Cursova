@@ -25,14 +25,13 @@ export const fetchPostsForSubscriptions = async () => {
               try {
                 const postRes = await axios.get(`http://localhost:8002/api/posts/${post.postId}`);
                 const postData = postRes.data;
-  
-                // Перевірка, чи є description в даних поста
+            
                 const userProfileRes = await axios.get(`http://localhost:8010/api/users/${postData.creatorNickName}`);
                 const avatarUrl = userProfileRes.data.imageUrl || 'default-avatar.jpg';
                 return {
                   ...postData,
                   creatorAvatarUrl: avatarUrl,
-                  descriptions: postData.descriptions , // Додаємо description
+                  descriptions: postData.descriptions , 
                 };
                 
               } catch (error) {

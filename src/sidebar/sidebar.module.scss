@@ -17,7 +17,7 @@
 
 .links{
     display: flex;
-    flex-direction: column; /* Розташування елементів у стовпець */
+    flex-direction: column; 
     gap: 35px;
     width: 40px;
     margin-top: 150px;
@@ -66,19 +66,19 @@ gap: 5px;
 align-items: center;
 }
 .activeLink {
-    text-decoration: underline; /* додаємо підкреслення, коли лінк активний */
+    text-decoration: underline;
     text-underline-offset: 10px;
   }
 .avatar{
-    background-color: var(--bg-color);//Сюди буде завантажуватись аватар після встановлення
+    background-color: var(--bg-color);
     border-radius: 100%;
     width: 70px;
     height: 70px;
     margin-left: 25px;
     cursor: pointer;
     
-    background-size: cover; /* Масштабування зображення, щоб воно покривало весь блок */
-    background-position: center; /* Відображення центру зображення */
+    background-size: cover; 
+    background-position: center;
     z-index: 1;
     
 }
@@ -142,15 +142,15 @@ align-items: center;
   }
   .usersearch {
     margin-top: 40px;
-    display: flex;             /* включає флекс-контейнер */
-    flex-direction: column;    /* елементи стають у стовпчик */
-    gap: 15px;                 /* відстань між ними */
-    overflow-y: auto;          /* дозволяє прокручувати, якщо багато результатів */
-    max-height: 80vh;          /* обмеження висоти (за бажанням) */
+    display: flex;             
+    flex-direction: column;    
+    gap: 15px;                
+    overflow-y: auto;          
+    max-height: 80vh;         
   }
   
   .usersearch a {
-    background-color:var(--serach-color);  /* трохи прозорий фон */
+    background-color:var(--serach-color);  
     padding: 15px;
     border-radius: 8px;
     color: var(--text-color);
